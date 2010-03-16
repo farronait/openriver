@@ -1,0 +1,14 @@
+ Vario file dati
+ 2.geo                                      nome file di geometria
+ cismon.cno                                  nome file di portata
+2                                                 [1]Fondo fisso, [2]Fondo mobile
+0.0270                                                               diametro di fondo
+2   [1]Lento, [2]Veloce, [3]Veloce a monte Lento a valle, [4]Lento a monte Veloce
+3            Condizione al contorno di monte: [1]Tirante, [2]Critica, [3]Uniforme
+ 3480.                                                     tempo totale di simulazione
+  1.0                                          intervallo di tempo di visualizzazione
+   50.                                                      Rapporto scala grafico Y/X
+ 15.0                                           intervallo di tempo di stampa su file
+0.8000                                                  parametro di stabilità Courant
+2                                             [1] Chèzy     [2]Gauckler-Strickler
+4   [1] Formula monomia 2D   [2] Parker   [3] Shields   [4] MPM   [5] Smart&Jaggy
