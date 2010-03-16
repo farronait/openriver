@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import csv
+
 class Segment:
     """
     It defines the segment of a river cross-section
@@ -31,9 +33,41 @@ class Section:
 	self.erodible = erodible
 	self.roughness = roughness
 	self.discontinuity = discontinuity
-	self.segment = []
+	self.segments = []
 
     def addSegment(self, yzcoordSegm=None,
 		    roughness=None):
 	segment = Segment(yzcoordSegm, roughness)
-	self.segment.append(segment)
+	self.segments.append(segment)
+	
+class Reach:
+	"""
+	It defines the geometric properties of a river reach.
+	It is composed by sections and sections can be subdivided in
+	segments.
+	"""
+	def __init__(self, lenght=None):
+		self.lenght = lenght
+		self.sections = []
+		
+	def addSection(self, section=None):
+		self.sections.append(section)
+		
+	def importFile(self, filename):
+		datalist = []
+		geometryFile = open(filename, "r")
+		readerpipe = csv.reader(geometryFile, delimiter = "\t")
+		for row in readerpipe:
+			datalist.append(row)
+		xaxis = datalist[0][0]
+		npoints = datalist[1][0]
+		nsegments = datalist[1][1]
+		print("ok")
+		
+		
+		
+		
+		
+		
+		
+		
