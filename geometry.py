@@ -15,17 +15,6 @@ print rect,  rect2
 
 import csv
 
-class Segment:
-    """
-    It defines the segment of a river cross-section
-    with its own roughness.
-    """
-    def __init__(self,
-        yzcoordSegm=None,
-        roughness=None):
-        self.yzcoordSegm = yzcoordSegm
-        self.roughness = roughness
-
 class Section:
     """
     It defines attributes and methods for a river cross-section.
@@ -50,8 +39,7 @@ class Section:
 
     def addSegment(self, yzcoordSegm=None,
             roughness=None):
-        segment = Segment(yzcoordSegm, roughness)
-        self.segment.append(segment)
+        self.segment.append(Section(yzcoord=yzcoordSegm, roughness=roughness))
 
     def getRh(self):
         """Define Rh  for thee sectionon"""
