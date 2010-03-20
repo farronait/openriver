@@ -39,7 +39,6 @@ class Section:
     sect.addSegment(sect.yzcoord[2:], 40)
     """
     def __init__(self, xaxis=None,
-<<<<<<< HEAD
         yzcoord=None, erodible=True,
         roughness=None, discontinuity=False):
         self.xaxis = xaxis
@@ -61,20 +60,7 @@ class Section:
     def getWetBorder(self):
         """Calculate web border from a given section"""
         pass
-=======
-		yzcoord=None, erodible=True,
-		roughness=None, discontinuity=False):
-	self.xaxis = xaxis
-	self.yzcoord = yzcoord
-	self.erodible = erodible
-	self.roughness = roughness
-	self.discontinuity = discontinuity
-	self.segments = []
 
-    def addSegment(self, yzcoordSegm=None,
-		    roughness=None):
-	segment = Segment(yzcoordSegm, roughness)
-	self.segments.append(segment)
 	
 class Reach:
 	"""
@@ -101,10 +87,4 @@ class Reach:
 		print("ok")
 		
 		
-		
-		
-		
-		
-		
-		
->>>>>>> 90ecaefd5a21d8154f661e0cfbc725c529b68b5f
+
