@@ -29,17 +29,19 @@ class Section:
     """
     def __init__(self, xaxis=None,
         yzcoord=None, erodible=True,
-        roughness=None, discontinuity=False):
+        roughness=None, discontinuity=False,
+        subsection=False):
         self.xaxis = xaxis
         self.coord = yzcoord
         self.erodible = erodible
         self.roughness = roughness
         self.discontinuity = discontinuity
+        self.subsection = subsection
         self.segment = []
 
     def addSegment(self, yzcoordSegm=None,
             roughness=None):
-        self.segment.append(Section(yzcoord=yzcoordSegm, roughness=roughness))
+        self.segment.append(Section(yzcoord=yzcoordSegm, roughness=roughness, subsection=True))
 
     def getRh(self):
         """Define Rh  for thee sectionon"""
