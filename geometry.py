@@ -160,30 +160,30 @@ class Reach:
         nsegments = datalist[1][1]
         print("ok")
 
-sezdata52=np.array([[0.000, 0.930,  7.190, 12.590, 18.080, 18.910, 20.070],
-[747.27000, 742.79000, 742.77000, 742.75000, 742.73000, 742.73000, 747.28000]])
-print sezdata52
 
-sect=Section(yzcoord=sezdata52)
+class Reach:
+    """
+    It defines the geometric properties of a river reach.
+    It is composed by sections and sections can be subdivided in
+    segments.
+    """
+    def __init__(self, lenght=None):
+        self.lenght = lenght
+        self.sections = []
 
-sez=np.array([[   0., 747.27],
- [   0.93, 742.79],
- [   7.19, 742.77],
- [  12.59, 742.75],
- [  18.08, 742.73],
- [  18.91, 742.73],
- [  20.07, 747.28]])
+    def addSection(self, section=None):
+        self.sections.append(section)
 
-delt0=np.array([[ 0.04359375,  -0.21      ],
- [ 6.26      ,  -0.02      ],
- [ 5.4       ,  -0.02      ],
- [ 5.49      ,  -0.02      ],
- [ 0.83      ,   0.        ],
- [ 0.06883516,   0.27      ]])
+    def importFile(self, filename):
+        datalist = []
+        geometryFile = open(filename, "r")
+        readerpipe = csv.reader(geometryFile, delimiter = "\t")
+        for row in readerpipe:
+            datalist.append(row)
+        xaxis = datalist[0][0]
+        npoints = datalist[1][0]
+        nsegments = datalist[1][1]
+        print("ok")
 
-delt1=np.array([[ 0,  0 ],
- [ 0, -2 ],
- [ 2, -2 ],
- [ 2, -3 ],
- [ 6, -3 ],
- [ 6, 0]])
+
+
