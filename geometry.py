@@ -15,17 +15,6 @@ print rect,  rect2
 
 import csv
 
-class Segment:
-    """
-    It defines the segment of a river cross-section
-    with its own roughness.
-    """
-    def __init__(self,
-        yzcoordSegm=None,
-        roughness=None):
-        self.yzcoordSegm = yzcoordSegm
-        self.roughness = roughness
-
 class Section:
     """
     It defines attributes and methods for a river cross-section.
@@ -40,7 +29,8 @@ class Section:
     """
     def __init__(self, xaxis=None,
         yzcoord=None, erodible=True,
-        roughness=None, discontinuity=False):
+        roughness=None, discontinuity=False,
+        subsection=False):
         self.xaxis = xaxis
         self.coord = yzcoord
         minimum = self.coord[1].argmin()
@@ -48,12 +38,12 @@ class Section:
         self.erodible = erodible
         self.roughness = roughness
         self.discontinuity = discontinuity
+        self.subsection = subsection
         self.segment = []
 
     def addSegment(self, yzcoordSegm=None,
             roughness=None):
-        segment = Segment(yzcoordSegm, roughness)
-        self.segment.append(segment)
+        self.segment.append(Section(yzcoord=yzcoordSegm, roughness=roughness, subsection=True))
 
     def firstPointAfter_h(self, points, h):
         """Return index of the first
