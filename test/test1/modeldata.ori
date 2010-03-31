@@ -1,0 +1,18 @@
+bump
+0						!ifilein
+0.9						!cflcoe
+2000 						!final time
+1000						!itout
+100						!itout_sez
+2.597793095166e-2				!dstar_m 
+2.597793095166e-2				!dstar_v 
+0						!qstar
+0						!usadir
+0.						!t0
+200						!punti max della sezione
+5						!limite
+100000000					!ntmaxi
+100						!ks alveo
+100						!ks isola
+100						!ks arboreo 	
+100						!ks erbaceo
